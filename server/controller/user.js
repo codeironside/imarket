@@ -83,72 +83,94 @@ const register = asyncHandler(async (req, res) => {
   
     const html = `
     <!DOCTYPE html>
-  <html>
-  <head>
-    <style>
-      /* Set the body background to the image */
-      body {
-        background-image:url('https://img.freepik.com/free-photo/front-view-stacked-books-graduation-cap-open-book-education-day_23-2149241017.jpg?w=740&t=st=1672839251~exp=1672839851~hmac=250a8619cf050e204e19f685163952c48a928f250756df0e7e70c93e889369da') ;
-        background-size: cover;
-        background-repeat: no-repeat;
-        font-family: sans-serif;
-        color: white;
-        text-align: center;
-        padding: 50px;
-      }
-  
-      /* Style the header */
-      h1 {
-          color:red;
-        font-size: 48px;
-        margin-bottom: 20px;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-      }
-  
-      /* Style the message */
-      p {
-        font-size: 18px;
-        margin-bottom: 20px;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-      }
-  
-      /* Style the button */
-      .button {
-        display: inline-block;
-        background-color: #3498db;
-        color: white;
-        padding: 15px 30px;
-        border-radius: 5px;
-        text-decoration: none;
-        font-size: 18px;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-      }
-    </style>
-  </head>
-  <body>
-    <h1>Welcome to My IMARKET</h1>
-    <p>Dear ${firstName},
+<html>
+<head>
+  <style>
+    /* Set the body background to the image */
+    body {
+      background-image:url('https://img.freepik.com/free-photo/front-view-stacked-books-graduation-cap-open-book-education-day_23-2149241017.jpg?w=740&t=st=1672839251~exp=1672839851~hmac=250a8619cf050e204e19f685163952c48a928f250756df0e7e70c93e889369da') ;
+      background-size: cover;
+      background-repeat: no-repeat;
+      font-family: sans-serif;
+      color: white;
+      text-align: center;
+      padding: 50px;
+    }
 
-    Welcome to IMARKET, your one-stop online marketplace for AFIT Kaduna. We are thrilled to have you on board and can't wait for you to start browsing and buying from our wide selection of products and services. Our marketplace is designed to connect students, staff and faculty with a convenient and easy way to buy, sell and trade items within the school community
-    
-    We understand that you have a lot of options when it comes to online marketplaces, and we are honored that you have chosen us. We promise to provide you with an easy, convenient, and enjoyable shopping experience.
-    
-    To get started, simply log in to your account using the email and password you provided during registration. From there, you can browse through our various categories, add items to your cart, and complete your purchase.
-    
-    If you have any questions or need assistance, please don't hesitate to reach out to our customer support team. We are always here to help.
-    
-    Thank you for choosing IMARKET. Happy shopping!
-    
-    Best regards,
-    The IMARKET Team
-    
-    
-    
-    
-    .</p>
-    <a class="button" href="#">Explore the App</a>
-  </body>
-  </html>
+    /* Style the header */
+    h1 {
+        color:red;
+      font-size: 48px;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Style the message */
+    .class{
+      font-size: 28px;
+      font-family:comic-sans;
+      font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    .class1{
+      font-size: 20px;
+      font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    .center{
+      justify-content:center;
+      align-self: flex-start;
+      font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      font-size: 17px;
+      color: rgba(17, 17, 17, 0.87);
+      font-weight: bold;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5)
+    }
+
+    /* Style the button */
+    .button {
+      display: inline-block;
+      background-color: #3498db;
+      color: white;
+      padding: 15px 30px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 18px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+  </style>
+</head>
+<body>
+  <h1>Welcome to My IMARKET</h1>
+  <p class="class">Dear ${firstName}.</p>,
+
+ <div class="center"> <p class="class1">Welcome to IMARKET</p></br>
+ 
+ <p class="center">your one-stop online marketplace for AFIT Kaduna. We are thrilled to have you on board and can't wait for you to </br>
+ start browsing and buying from our wide selection of products and services. Our marketplace is designed to connect</br> 
+ students, staff and faculty with a convenient and easy way to buy, sell and trade items within the school community</br>
+  
+  We understand that you have a lot of options when it comes to online marketplaces, and we are honored that you have chosen us.</br>
+ We promise to provide you with an easy, convenient, and enjoyable shopping experience.</br>
+  
+  To get started, simply log in to your account using the email and password you provided during registration. From there, you can browse through our various categories, add items to your cart, and complete your purchase.</br>
+  
+  If you have any questions or need assistance, please don't hesitate to reach out to our customer support team. We are always here to help.</br>
+  
+  Thank you for choosing IMARKET. Happy shopping!</div>
+  
+  <p class="center">regards,</br></p> 
+  <p class="center">The IMARKET Team</br></p>
+  
+  
+  
+  
+  
+  <a class="button" href="#">Explore the App</a>
+</body>
+</html>
   `;
   
     const mailOptions = {
