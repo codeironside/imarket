@@ -6,7 +6,7 @@ const USER = mongoose.Schema(
       required: [true, "please add a name "],
     },
     middlename: {
-      type: String
+      type: String,
     },
     surname: {
       type: String,
@@ -18,34 +18,32 @@ const USER = mongoose.Schema(
     // },
     role: {
       type: String,
-      default: "staff",
+      default: "default",
       required: [true, "please specify a role"],
-      default:"default"
     },
     email: {
       type: String,
-      unique:true,
+      unique: true,
       required: [true, "please specify a role"],
     },
-  
+
     password: {
       type: String,
     },
-    dateOfBirth:{
-type:String,
-required:[true,"include a date of birth"]
-    },
-   
     phoneNumber: {
       type: String,
       required: [true, "please include phone number"],
     },
-   
-  
-    proofOfPayment:{
-      type:String
+
+    proofOfPayment: {
+      type: String,
     },
-   
+    sessionStorage: {
+      type: String,
+    },
+    address:{
+      type:String
+    }
   },
 
   {

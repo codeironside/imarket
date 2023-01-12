@@ -2,3 +2,4 @@ node_modules
 serverlog
 userlog
 .env
+/views
