@@ -1,6 +1,6 @@
-const https = require("https");
 const fs = require("fs");
 const path = require("path");
+const https = require("https");
 const colors = require("colors");
 const crypto = require("crypto");
 const multer = require("multer");
@@ -8,8 +8,11 @@ const express = require("express");
 const bcrypt = require("bcryptjs");
 const connectDB = require("./config/db");
 const dotenv = require("dotenv").config();
+const sessions = require("./middleware/sessions")
 // const GridFsStorage = require("multer-gridfs-storage");
 const { errorHandler } = require("./middleware/errormiddleware");
+
+
 
 // const helmet = require("./middleware/helmet");
 const app = express();
@@ -28,9 +31,14 @@ connectDB();
 // app.use(helmet);
 
 //middlewares
+// if (app.get('env') === 'production') {
+//   app.set('trust proxy', 1) // trust first proxy
+//   sess.cookie.secure = true // serve secure cookies
+// }
+app.use(sessions)
 
 app.use(express.json());
-
+//TODO:sessions
 app.use(express.urlencoded({ extended: false }));
 // app.use(methodOverride("_method"));
 
