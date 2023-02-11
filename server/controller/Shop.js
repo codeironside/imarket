@@ -75,7 +75,7 @@ const paystack=process.env.paystackkey
     port: 443,
     path: "/bank/resolve?account_number=0001234567&bank_code=058",
     method: "GET",
-    headers: {Authorization: ` Bearer sk_live_c5c08c6dbb7b619d4a6677d2e4a838f23cb55f81`,},
+    headers: {Authorization: ` Bearer `,},
   };
 
  await https
