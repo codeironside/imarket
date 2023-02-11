@@ -1,41 +1,68 @@
 const mongoose = require("mongoose");
-const PRODUCT = mongoose.Schema(
+const SHOP = mongoose.Schema(
   {
-    productid: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "USER",
-        required: true,
-      },
-    productName:{
+    ownersid: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "USER",
+      required: true,
+    },
+    shopid: {
+      type: String,
+      required: [true, "please add the id"],
+      unique: true,
+    },
+    shopName: {
       type: String,
       required: [true, "please add a name "],
     },
-   price: {
+    address: {
       type: String,
     },
-    QuantityAvailable: {
+    description: {
       type: String,
       required: [true, "please add a quantity"],
     },
- 
-    available: {
-      type: Boolean,
-      default: true,
-      required: [true, "please specify a role"],
+
+    openTime: {
+      type: Date,
+      required: [true, "please specify an opening time"],
     },
-    picture:{
-        type:String,
-        required:[true,"please add a picture"]
+    closingTime: {
+      type: Date,
+      required: [true, "please specify a closing tome"],
     },
-    description:{
+    daysOpened: {
+      type: String,
+      required: [true, "please specify days opened"],
+    },
+    picture: {
+      type: String,
+      required: [true, "please add a picture"],
+    },
+    contactNumber: {
+      type: String,
+      required: [true, "please add a contact number "],
+    },
+    contactEmail: {
+      type: String,
+      required: [true, "please add a contact email"],
+    },
+    description: {
+      type: String,
+      required: [true, "please add a description"],
+    },
+    BankName:{
         type:String,
-        required:[true,"please add a description"]
+        required:[true,"please add a bank name"]
+    },
+    AccountNumber:{
+        type:String,
+        required:[true,"please add an Account Number"]
     }
-   
   },
 
   {
     timestamps: true,
   }
 );
-module.exports = mongoose.model("PRODUCT", PRODUCT);
+module.exports = mongoose.model("SHOP", SHOP);

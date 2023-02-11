@@ -43,6 +43,8 @@ app.use(express.urlencoded({ extended: false }));
 // app.use(methodOverride("_method"));
 
 app.use("/user", require("./routes/user"));
+app.use("/shops", require("./routes/shops"));
+app.use("/products", require("./routes/product"))
 
 app.use(errorHandler);
 

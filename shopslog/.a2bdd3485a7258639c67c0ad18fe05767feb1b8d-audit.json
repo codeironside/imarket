@@ -1,0 +1,35 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 30
+    },
+    "auditLog": "shopslog\\.a2bdd3485a7258639c67c0ad18fe05767feb1b8d-audit.json",
+    "files": [
+        {
+            "date": 1673914641259,
+            "name": "shopslog\\2023-01-17-shop.log",
+            "hash": "baff9234f371707302e40033d67ed5217acb8ef6ace834d311fa2b9e3610d78e"
+        },
+        {
+            "date": 1673996438335,
+            "name": "shopslog\\2023-01-18-shop.log",
+            "hash": "ef3d5617fdfa5558ba1424776020a71709d27b5ac50cf194075b8976f6b8e0ab"
+        },
+        {
+            "date": 1674547938442,
+            "name": "shopslog\\2023-01-24-shop.log",
+            "hash": "d0b209197aac15a4d46dfbf5c33fcd116039f8576fc4be1f05a7e67616b6669b"
+        },
+        {
+            "date": 1675427261880,
+            "name": "shopslog\\2023-02-03-shop.log",
+            "hash": "3f8006b087b729cc0a3fbd5e55a0206803ad2c776332d4e4162202f7a90e6757"
+        },
+        {
+            "date": 1676134385528,
+            "name": "shopslog\\2023-02-11-shop.log",
+            "hash": "ae5194252e193a857b2bdf9cc7938489dec0bfdf123e110c30f81ee44c7818c6"
+        }
+    ],
+    "hashType": "sha256"
+}

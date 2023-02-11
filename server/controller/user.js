@@ -3,6 +3,7 @@ const nodemailer= require("nodemailer")
 const USER = require("../model/user");
 const asyncHandler = require("express-async-handler");
 const userlogger= require("../utils/userlogger")
+const jwt= require("jsonwebtoken")
 
 //home page
 
@@ -25,9 +26,9 @@ const login = asyncHandler(async (req, res) => {
 
   const id = await USER.findOne({ email: email });
   if (id) {
-    if (USER && bcrypt.compare(password, USER.password)) {
+    if (id && bcrypt.compare(password, id.password)) {
       req.session.userid = req.session.id;
-      req.session.role = USER.role;
+      req.session.role = id.role;
       const change = await USER.findByIdAndUpdate(
         id._id,
         { sessionStorage: req.session.id },
@@ -37,11 +38,16 @@ const login = asyncHandler(async (req, res) => {
         res.status(202).json({
           userid: req.session.userid,
           role: req.session.role,
-          token: generateToken(id),
+          token: generateToken(id._id),
         });
+        userlogger.info(
+          ` user with userid: ${email} logged in coode:200 - ${res.statusMessage} - ${req.originalUrl} - ${req.method} - ${req.ip} `
+        );
       }
     }
 
+    
+  }else{
     throw new Error("user not found");
   }
 });
@@ -216,9 +222,9 @@ const logout = asyncHandler(async (req, res) => {
   req.session.destroy();
 });
 const generateToken = (id) => {
-  jwt.sign(
+  return jwt.sign(
     {
-      data: id,
+      id
     },
     process.env.JWT_SECRET,
     { expiresIn: "12h" }

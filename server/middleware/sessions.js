@@ -8,8 +8,8 @@ if (app.get('env') === 'production') {
 const session = sessions({
   secret: process.env.sessionSecret,
   cookie: {
-    maxAge: 1000 * 60 * 60 * 12, //12 houares
   },
+    maxAge: 1000 * 60 * 60 * 12, //12 houares
   resave: true,
   saveUninitialized: false,
 });

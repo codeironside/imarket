@@ -12,7 +12,7 @@ router.route("").get(home)
 
 //login route
 
-router.route("/login").get(login)
+router.route("/login").post(login)
 
 
 
