@@ -1,10 +1,10 @@
-const { createLogger, format,errors, transports } = require('winston');
+const { createLogger, format,error, transports } = require('winston');
 require('winston-daily-rotate-file');
 const fs = require('fs');
 const path = require('path');
 
 const env = process.env.NODE_ENV || 'development';
-const logDir = 'serverlog';
+const logDir = 'shopslog';
 const datePatternConfiguration = {
   default: 'YYYY-MM-DD',
   everHour: 'YYYY-MM-DD-HH',
@@ -18,16 +18,16 @@ if (!fs.existsSync(logDir)) {
   fs.mkdirSync(logDir);
 }
 
+
 const dailyRotateFileTransport = new transports.DailyRotateFile({
-  filename: `${logDir}/%DATE%-server.log`,
+  filename: `${logDir}/%DATE%-shop.log`,
   datePattern: datePatternConfiguration.everDay,
   zippedArchive: true,
   maxSize: `${fileSizeToRotate}m`,
   maxFiles: `${numberOfDaysToKeepLog}d`
 });
 
-
-const logger = createLogger({
+const shoplogger = createLogger({
   // change level if in dev environment versus production
   level: env === 'development' ? 'verbose' : 'info',
   handleExceptions: true,
@@ -50,15 +50,14 @@ const logger = createLogger({
         ),
       ),
     }),
-  
     dailyRotateFileTransport,
   ],
 });
 ;
 
-logger.stream = {
+shoplogger.stream = {
   write: (message) => {
-    logger.info(message);
+    shoplogger.info(message);
   },
 };
 // userlogger.stream = {
@@ -66,4 +65,4 @@ logger.stream = {
 //     userlogger.info(message);
 //   },
 // };
-module.exports = logger;
+module.exports = shoplogger;
