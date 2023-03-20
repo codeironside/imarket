@@ -1,0 +1,17 @@
+@import './index.scss';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: $light-color;
+  font-family: $font-poppins;
+}
+
+#root {
+  min-height: 100vh;
+  width: 100%;
+}
