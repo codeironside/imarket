@@ -6,29 +6,19 @@
     "auditLog": "shopslog\\.a2bdd3485a7258639c67c0ad18fe05767feb1b8d-audit.json",
     "files": [
         {
-            "date": 1673914641259,
-            "name": "shopslog\\2023-01-17-shop.log",
-            "hash": "baff9234f371707302e40033d67ed5217acb8ef6ace834d311fa2b9e3610d78e"
+            "date": 1678898002159,
+            "name": "shopslog\\2023-03-15-shop.log",
+            "hash": "6a517a7fd860254b9d92df3a3d55feb2d4043ca1797fbb92e52df345156715f1"
         },
         {
-            "date": 1673996438335,
-            "name": "shopslog\\2023-01-18-shop.log",
-            "hash": "ef3d5617fdfa5558ba1424776020a71709d27b5ac50cf194075b8976f6b8e0ab"
+            "date": 1678966940905,
+            "name": "shopslog\\2023-03-16-shop.log",
+            "hash": "812ed2d8d8c64945fbb534c481e74b2b58d5dd62c44bd78d21a9fe3aa717dfab"
         },
         {
-            "date": 1674547938442,
-            "name": "shopslog\\2023-01-24-shop.log",
-            "hash": "d0b209197aac15a4d46dfbf5c33fcd116039f8576fc4be1f05a7e67616b6669b"
-        },
-        {
-            "date": 1675427261880,
-            "name": "shopslog\\2023-02-03-shop.log",
-            "hash": "3f8006b087b729cc0a3fbd5e55a0206803ad2c776332d4e4162202f7a90e6757"
-        },
-        {
-            "date": 1676134385528,
-            "name": "shopslog\\2023-02-11-shop.log",
-            "hash": "ae5194252e193a857b2bdf9cc7938489dec0bfdf123e110c30f81ee44c7818c6"
+            "date": 1679319872440,
+            "name": "shopslog\\2023-03-20-shop.log",
+            "hash": "de0d7b0c2fc03c87f69cf5c5fe1519b5f7bd98683844ba31a9ff7f00a6681387"
         }
     ],
     "hashType": "sha256"

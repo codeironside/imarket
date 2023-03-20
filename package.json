@@ -4,8 +4,12 @@
   "description": "a market place for afit comminuty first and the world at large",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "nodemon server/server.js"
+    "server": "nodemon server/server.js",
+    "client-install": "cd iMarket-CS && npm install",
+    
+    "test": "mocha",
+    "client": "npm dev --prefix iMarket-CS",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "repository": {
     "type": "git",
