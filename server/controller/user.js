@@ -18,10 +18,7 @@ const home = asyncHandler(async (req, res) => {
 //desc login users
 //access public
 const login = asyncHandler(async (req, res) => {
-  if (req.session.userid) {
-    console.log(req.session.id);
-    return res.redirect("/");
-  }
+  
   const { email, password } = req.body;
 
   const id = await USER.findOne({ email: email });
@@ -180,7 +177,7 @@ const register = asyncHandler(async (req, res) => {
   `;
   
     const mailOptions = {
-      from: process.env.EMAIL,
+      from: process.env.email,
       to: email,
       subject: "Welcome to IMARKET - Your Online Marketplace for AFIT Kaduna",
       html: html,

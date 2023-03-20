@@ -7,7 +7,13 @@ const shopslogger = require("../utils/shopslogger")
 
 
 
-
+//@desc get  all products related to a shop
+//route shops/product/getall
+//access public
+const getallproduct = asyncHandler(async(req,res)=>{
+  const {id}=req.staff
+  const getall= await PRODUCT.find()
+})
 
 
 //@desc register product
@@ -37,4 +43,11 @@ const createproduct = await PRODUCT.create({
   }
 });
 
+
+//desc pay for product
+//@access private
+//routes product/pay
+const payForproduct= asyncHandler(async(req,res)=>{
+
+})
 module.exports = { registerProduct };
