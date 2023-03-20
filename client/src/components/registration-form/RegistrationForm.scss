@@ -1,0 +1,223 @@
+@import '../../index.scss';
+form {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+
+  h1 {
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  p {
+    margin: 1rem 0;
+    font-size: 0.9rem;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.9rem 0.5rem;
+  }
+
+  .red {
+    color: $red-color;
+  }
+
+  .green {
+    color: $green-color;
+  }
+
+  .field {
+    position: relative;
+    transition: 0.5s ease-in-out;
+
+    span {
+      position: absolute;
+      padding: 0.3rem 0.5rem;
+      font-size: 0.8rem;
+      background: $light-color;
+      pointer-events: none;
+      color: $green-color;
+      background: lighten($color: $green-color, $amount: 60);
+      display: flex;
+      align-items: center;
+      gap: 0.2rem;
+
+      strong {
+        display: none;
+        font-size: 0.8rem;
+        margin: 0;
+      }
+    }
+
+    label {
+      display: flex;
+      background: lighten($color: $green-color, $amount: 60);
+
+      svg {
+        font-size: 1.6rem;
+        padding: 0.3rem 0;
+        color: $green-color;
+      }
+    }
+
+    .error-message {
+      color: $red-color;
+      font-size: 0.5rem;
+      padding: 0.1rem 0.3rem;
+      text-align: center;
+      background: lighten($color: $red-color, $amount: 34);
+      margin: 0;
+      position: relative;
+
+      svg {
+        position: absolute;
+        font-size: 0.7rem;
+        margin: auto 0;
+        top: -0.3rem;
+        left: 0.3rem;
+      }
+
+      ul {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        text-align: left;
+        padding: 0 1rem;
+        margin: 0;
+
+        li {
+          padding: 0;
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    padding: 0.5rem 0.5rem;
+    font-family: $font-poppins;
+    font-size: 0.8rem;
+    background: lighten($color: $green-color, $amount: 60);
+    outline: none;
+    border: none;
+    transition: all 0.5s ease-in-out;
+    transition: border 0.1ms;
+    color: $green-color;
+    font-weight: 500;
+  }
+
+  input:focus,
+  textarea:focus {
+    border-left: 3px solid $brown-color;
+    color: $brown-color;
+  }
+
+  input.activated ~ span,
+  textarea.activated ~ span {
+    transform: translateX(8px) translateY(-8px);
+    padding: 0 0.3rem;
+    border-left: 1px solid $green-color;
+    border-right: 1px solid $green-color;
+    background: lighten($color: $green-color, $amount: 60);
+    color: lighten($color: $green-color, $amount: 20);
+    font-size: 0.6rem;
+
+    strong {
+      display: inline;
+    }
+  }
+
+  input:focus ~ span,
+  textarea:focus ~ span {
+    transform: translateX(8px) translateY(-8px);
+    padding: 0 0.3rem;
+    border-left: 2px solid $brown-color;
+    border-right: 2px solid $brown-color;
+    background: lighten($color: $green-color, $amount: 60);
+    color: $brown-color;
+    font-size: 0.6rem;
+    font-weight: 600;
+
+    strong {
+      display: inline;
+    }
+  }
+
+  input:focus ~ svg,
+  input:focus ~ button > svg,
+  textarea:focus ~ svg {
+    color: $brown-color;
+  }
+
+  input::-ms-reveal,
+  input::-ms-clear {
+    display: none;
+  }
+
+  button {
+    @include button;
+  }
+
+  .link {
+    @include link-btn;
+  }
+
+  .link:hover {
+    @include link-btn-hover;
+  }
+
+  .click {
+    button {
+      @include primary-btn;
+    }
+
+    button:hover {
+      @include primary-btn-hover;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  form {
+    width: 280px;
+    margin-left: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  form {
+    width: 95%;
+    margin: 0 auto;
+    .field {
+      span {
+        font-size: 0.6rem;
+
+        strong {
+          font-size: 0.6rem;
+        }
+      }
+
+      label {
+        display: flex;
+        background: lighten($color: $green-color, $amount: 60);
+
+        svg {
+          font-size: 1.6rem;
+          padding: 0.3rem 0;
+        }
+      }
+
+      .error-message {
+        font-size: 0.4rem;
+
+        svg {
+          font-size: 0.5rem;
+        }
+      }
+    }
+  }
+}

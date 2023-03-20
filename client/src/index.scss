@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+$light-color: #ece5e3;
+$red-color: #e74853;
+$green-color: #46747c;
+$purple-color: #c5b8cd;
+$brown-color: #946258;
+
+$font-poppins: 'Poppins', sans-serif;
+
+@mixin link-btn {
+  text-decoration: none;
+  padding: 0.1rem 0.5rem;
+  border-radius: 8px;
+  border: 2px solid $light-color;
+  background: $green-color;
+  color: $light-color;
+  transition: 0.2s ease-in-out;
+}
+
+@mixin link-btn-hover {
+  background: $light-color;
+  color: $green-color;
+}
+
+@mixin button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+@mixin primary-btn {
+  @include button;
+  padding: 0.3rem 0.5rem;
+  color: $light-color;
+  border: 2px solid $light-color;
+}
+
+@mixin primary-btn-hover {
+  @include button;
+  color: $green-color;
+  background: $light-color;
+  border: 2px solid $light-color;
+  transition: 0.2s ease-in-out;
+}

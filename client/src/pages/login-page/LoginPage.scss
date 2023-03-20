@@ -1,0 +1,92 @@
+@import '../../index.scss';
+
+#login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+
+  section {
+    width: 90%;
+    max-width: 800px;
+    margin: auto;
+    border-radius: 20px;
+
+    .overlay {
+      background: linear-gradient(
+        90deg,
+        $green-color,
+        $green-color,
+        transparent
+      );
+      padding: 2rem;
+      border-radius: 20px;
+      color: #fff;
+
+      .header {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.8rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+
+        img {
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+        }
+      }
+
+      .footer {
+        font-size: 0.8rem;
+        color: #fff;
+        margin: 1.5rem 0;
+
+        .link {
+          @include link-btn;
+          margin-left: 1rem;
+          font-size: 0.7rem;
+        }
+
+        .link:hover {
+          @include link-btn-hover;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  #login {
+    section {
+      width: 90%;
+      .overlay {
+        background: linear-gradient(
+          90deg,
+          $green-color,
+          $green-color,
+          $green-color,
+          transparent
+        );
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  #login {
+    display: flex;
+    min-height: 100vh;
+
+    section {
+      width: 95%;
+      border-radius: 10px;
+
+      .overlay {
+        background: $green-color;
+        border-radius: 10px;
+      }
+    }
+  }
+}
