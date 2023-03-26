@@ -30,6 +30,10 @@ app.use(morgan("tiny", { stream: logger.stream }));
 connectDB();
 // app.use(helmet);
 
+
+
+
+//... mz
 //middlewares
 // if (app.get('env') === 'production') {
 //   app.set('trust proxy', 1) // trust first proxy
