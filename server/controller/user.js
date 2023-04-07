@@ -10,7 +10,10 @@ const jwt= require("jsonwebtoken")
 const home = asyncHandler(async (req, res) => {
   if (!req.session.userid) {
     console.log(req.session.id);
-    res.redirect("user/register");
+    res.status(401).json({
+      status:"401",
+      message:"User not found"
+    });
   }
 });
 
@@ -32,10 +35,10 @@ const login = asyncHandler(async (req, res) => {
         { new: true }
       );
       if (change) {
-        res.status(202).json({
+        res.status(200).json({
           userid: req.session.userid,
           role: req.session.role,
-          token: generateToken(id._id),
+          // token: generateToken(id._id),
         });
         userlogger.info(
           ` user with userid: ${email} logged in coode:200 - ${res.statusMessage} - ${req.originalUrl} - ${req.method} - ${req.ip} `
@@ -46,6 +49,7 @@ const login = asyncHandler(async (req, res) => {
     
   }else{
     throw new Error("user not found");
+    
   }
 });
 

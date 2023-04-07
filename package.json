@@ -5,10 +5,10 @@
   "main": "server.js",
   "scripts": {
     "server": "nodemon server/server.js",
-    "client-install": "cd iMarket-CS && npm install",
+    "client-install": "cd client && npm install",
     
     "test": "mocha",
-    "client": "npm dev --prefix iMarket-CS",
+    "client": "npm dev --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "repository": {
